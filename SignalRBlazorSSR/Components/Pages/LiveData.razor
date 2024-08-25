@@ -1,0 +1,47 @@
+﻿@page "/live-data"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SignalRBlazorSSR.Data
+@using SignalRBlazorSSR.Services
+@inject EmployeeService EmployeeService;
+@inject NavigationManager Navigation;
+@rendermode InteractiveServer
+
+<MudPopoverProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<PageTitle>Live data</PageTitle>
+
+@foreach(var emp in _employeesList)
+{
+    <MudText Typo="Typo.h6" GutterBottom="true">@emp.Name</MudText>
+    <MudText Typo="Typo.body1" Class="mb-8">@emp.Title</MudText>
+}
+
+<MudText Typo="Typo.h6" GutterBottom="true">Total employees: @_employeeCount</MudText>
+
+
+@code {
+    List <Employee> _employeesList = new List<Employee>();
+    int _employeeCount;
+    private HubConnection? hubConnection;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        _employeesList = await EmployeeService.GetAllGetEmployees();
+        _employeeCount = await EmployeeService.CountEmployees();
+        
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/employeehub"))
+            .Build();
+        
+        hubConnection.On<List<Employee>, int>("RefreshEmployees", (employee, count) =>
+        {
+            _employeesList = employee;
+            _employeeCount = count;
+            InvokeAsync(StateHasChanged);
+        });
+        
+        await hubConnection.StartAsync();
+        }
+    }
