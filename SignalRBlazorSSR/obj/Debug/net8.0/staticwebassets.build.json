@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t4fO2FO5gJwf5nPd+LwaGV7LKE+8rvdctdaT1Oq6VWk=",
+  "Hash": "qZ3gHODzAtoRNQa00SLe9kld/fn++g8qiWwygeG/Ngc=",
   "Source": "SignalRBlazorSSR",
   "BasePath": "_content/SignalRBlazorSSR",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\malth\\RiderProjects\\SignalRBlazorSSR\\SignalRBlazorSSR\\wwwroot\\js\\animation.js",
+      "SourceId": "SignalRBlazorSSR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\malth\\RiderProjects\\SignalRBlazorSSR\\SignalRBlazorSSR\\wwwroot\\",
+      "BasePath": "_content/SignalRBlazorSSR",
+      "RelativePath": "js/animation.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\animation.js"
     }
   ]
 }

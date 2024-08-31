@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\malth\\RiderProjects\\SignalRBlazorSSR\\SignalRBlazorSSR\\wwwroot\\js\\animation.js",
+      "PackagePath": "staticwebassets\\js\\animation.js"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SignalRBlazorSSR.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
